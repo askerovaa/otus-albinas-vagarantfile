@@ -1,2 +1,2 @@
-# otus-albinas-vagarantfile
+# otus-albinas-vagrantfile
 DZ 2
