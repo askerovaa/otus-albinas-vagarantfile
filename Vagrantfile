@@ -78,11 +78,11 @@ Vagrant.configure("2") do |config|
               cp ~vagrant/.ssh/auth* ~root/.ssh
 	      yum install -y mdadm smartmontools hdparm gdisk
 		  sudo yum install -y e2fsprogs											# набор утилит для создания .ext4
-		  sudo mdadm --create --verbose /dev/md0 -l 6 -n 6 /dev/sd{b,c,d,e,f,g} # создаем RAID6 из 6 дисков
-		  sudo mkfs.ext4 /dev/md0												# создаем файловую систему на созданом RAIDe
-		  sudo mkdir /mnt/shest													# создаем папку для монтирования 
+		  sudo mdadm --create --verbose /dev/md0 -l 6 -n 6 /dev/sd{b,c,d,e,f,g} 					# создаем RAID6 из 6 дисков
+		  sudo mkfs.ext4 /dev/md0											# создаем файловую систему на созданом RAIDe
+		  sudo mkdir /mnt/shest												# создаем папку для монтирования 
 		  sudo mount /dev/md0 /mnt/shest/										# монтирум RAID в созданную папку
-		  sudo echo /dev/md0 /mnt/shest ext4 defaults 1 1 >> /etc/fstab			# авто монтирование диска
+		  sudo echo /dev/md0 /mnt/shest ext4 defaults 1 1 >> /etc/fstab			              			# авто монтирование диска
   	  SHELL
 
       end
